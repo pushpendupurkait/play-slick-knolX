@@ -1,0 +1,12 @@
+@* logoutButton Template File *@
+@(emailID:String)
+<div class="col-md-8">
+	<h3>@emailID</h3>
+</div>
+<div class="col-md-2">
+	<a class="btn btn-danger" href=@routes.Application.showInfo()>Information</a>
+</div>
+
+<div class="col-md-2">
+	<a class="btn btn-danger" href=@routes.Application.logout() >Logout</a>
+</div>

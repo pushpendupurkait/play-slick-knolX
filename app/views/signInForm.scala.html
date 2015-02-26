@@ -1,0 +1,31 @@
+@* signInForm Template File *@
+@(computerForm: Form[SignIn])
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+@main("SignIn Form"){
+	<div class="col-md-12 panel panel-default">
+		<div class="panel-heading">
+			Sign-In Form
+		</div>
+		<div class="panel-body">
+    		@form(routes.Application.signIn(),'class -> "form form-horizontal", 'id->"form1",'method ->"post") {
+	
+	    <div class="form-group">
+	            @inputText(computerForm("Email"), '_label -> "Email",'class -> "form-control")
+	    </div>
+	    <div class="form-group">
+	            @inputPassword(computerForm("Password"), '_label -> "Password",'class -> "form-control")
+	    </div>
+	    
+	    <div class=" row">
+	        <div class="actions col-md-12">
+	            <input type="submit" value="Sign In" class="btn btn-info">
+	            <a class="btn btn-info" href="@routes.Application.signUpPage()	">Create New Account</a>
+	        </div>
+	        
+	    </div>
+    	}
+    	</div>
+    </div>
+}
+

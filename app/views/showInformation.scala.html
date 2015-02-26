@@ -1,0 +1,43 @@
+@* showInformation Template File *@
+@(record:User)
+@main("Information"){
+	
+	<div>
+		@logoutButton(record.Email)
+	</div>
+	
+				<table class="table table-striped">
+					<tr>
+						<td>Name</td>
+						<td>@record.Name</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>@record.Email</td>
+					</tr>
+					<tr>
+						<td>Address</td>
+						<td>@record.Address </td>
+					</tr>
+					<tr>
+						<td>Phone</td>
+						<td>@record.Phone </td>
+					</tr>
+					<tr>
+						<td>Company</td>
+						<td>@record.Company </td>
+					</tr>
+					<tr>
+						<td>Created</td>
+						<td>@record.Created.getDate/@(record.Created.getMonth+1)/@(record.Created.getYear+1900) 
+						</td>
+					</tr>			
+					<tr>
+						<td>Last Updated</td>
+						<td>@record.Update.getDate/@(record.Update.getMonth+1)/@(record.Update.getYear+1900) </td>
+					</tr>		
+				</table>
+			<a class="btn btn-danger" href=@routes.Application.updatePage() >Update</a>
+	
+	
+}

@@ -1,0 +1,44 @@
+@* updateForm Template File *@
+@(computerForm: Form[User])
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+@main("Update Form"){
+	<div class="col-md-12 panel panel-default">
+		<div class="panel-heading">
+			Update Form
+		</div>
+		<div class="panel-body">  
+		
+		    @form(routes.Application.update(),'class -> "form form-horizontal", 'id->"form1",'method ->"post") {
+			
+		    	<div class="form-group">
+		            @inputText(computerForm("Name"), '_label -> "Name",'class -> "form-control")
+		    	</div>
+		    	<div class="form-group">
+		            @inputText(computerForm("Address"), '_label -> "Address",'class -> "form-control")
+		    	</div>
+		    	<div class="form-group">
+		            @inputText(computerForm("Company"), '_label -> "Company",'class -> "form-control")
+		    	</div>
+		    	<div class="form-group">
+		            @inputText(computerForm("Email"), '_label -> "Email",'class -> "form-control")
+		    	</div>
+		    	<div class="form-group">
+		            @inputPassword(computerForm("Password"), '_label -> "Password",'class -> "form-control")
+		    	</div>
+		    	<div class="form-group">
+		            @inputText(computerForm("Phone"), '_label -> "Phone",'class -> "form-control")
+		    	</div>
+		    
+		    	<div class="container row">
+		        	<div class="actions col-md-6">
+		            	<input type="submit" value="Update" class="btn btn-info">
+		            	<a type="button" class="btn btn-info" href=@routes.Application.index() >Cancel</a>
+		        	</div>
+		        	<div class="col-md-6"></div>
+		        </div>
+    	}
+    	</div>
+    </div>
+}
+
